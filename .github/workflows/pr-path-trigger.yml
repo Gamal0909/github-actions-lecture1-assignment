@@ -1,8 +1,9 @@
 name: Pull Request with Path Filtering
 on:
     pull_request:
+        types: [opened, synchronize, reopened ,closed]
         branches:
-            - stg
+            - main
         paths:
             - 'src/**'
 

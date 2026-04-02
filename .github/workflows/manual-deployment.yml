@@ -1,0 +1,29 @@
+name: Workflow Dispatch (Manual Triggers)
+on:
+  workflow_dispatch:
+    inputs:
+        environment:
+            description: 'Deployment Environment'
+            required: true
+            default: 'staging'
+        deploy_type:
+            description: 'Type of Deployment'
+            required: true
+            type: choice
+            options: ['full', 'partial']
+        dry_run:
+            description: 'run as dry run '
+            required: false
+            type: boolean
+            default: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Deploy to Environment
+        run: |
+            echo "Deploying to ${{ github.event.inputs.environment }} with a ${{ github.event.inputs.deploy_type }} deployment." 
+
+    

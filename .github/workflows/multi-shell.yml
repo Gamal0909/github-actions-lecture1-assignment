@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: Print Hello World using Python
-          run: print'Hello World!'
+          run: print("Hello World!")
           shell: python
         - name: Print Hello World using Bash
           run: echo "Hello World!"

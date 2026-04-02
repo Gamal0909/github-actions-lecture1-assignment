@@ -2,7 +2,7 @@ name: Pull Request with Path Filtering
 on:
     pull_request:
         branches:
-            - main
+            - stg
         paths:
             - 'src/**'
 
@@ -12,4 +12,3 @@ jobs:
         steps:
             - name: Print Hello
               run: echo "Hello, this PR affects files in the src directory!"    
-              
